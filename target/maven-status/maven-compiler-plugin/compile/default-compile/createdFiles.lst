@@ -1,0 +1,6 @@
+org/tux/config/WebConfig.class
+org/tux/config/RootConfig.class
+org/tux/config/WebInit.class
+org/tux/entites/Article.class
+org/tux/controller/ArticleController.class
+org/tux/dao/ArticleRepository.class
