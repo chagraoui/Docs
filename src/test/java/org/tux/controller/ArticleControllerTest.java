@@ -1,6 +1,6 @@
 package org.tux.controller;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
 
@@ -10,25 +10,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import org.tux.config.WebConfig;
+import org.tux.config.WebInit;
 import org.tux.dao.ArticleRepository;
 import org.tux.entites.Article;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes=WebConfig.class)
+@ContextConfiguration(classes=WebInit.class)
 @WebAppConfiguration
 public class ArticleControllerTest {
 	
-	@Autowired	
-	ArticleRepository articleRepository;
+//	@Autowired	
+//	ArticleRepository articleRepository;
 	
 	@Test
 	public void  saveArticle(){
 		Date date= new Date();
 		Article article=new Article(1,"10", date, "Tmp");
-		articleRepository.save(article);
-		assertEquals("insertion OK", articleRepository.findAll().size(),1);
+//		articleRepository.save(article);
+		assertEquals("insertion OK", article.getIdArticle(),1);
 		
 	}
 
