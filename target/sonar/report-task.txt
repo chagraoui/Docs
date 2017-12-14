@@ -1,0 +1,6 @@
+projectKey=org.tux:documentation
+serverUrl=http://localhost:9000
+serverVersion=6.4.0.25310
+dashboardUrl=http://localhost:9000/dashboard/index/org.tux:documentation
+ceTaskId=AV_-Q31l3BufOetTxfGI
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AV_-Q31l3BufOetTxfGI
