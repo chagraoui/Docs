@@ -10,13 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+import org.tux.config.WebConfig;
 import org.tux.config.WebInit;
 import org.tux.dao.ArticleRepository;
 import org.tux.entites.Article;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes=WebInit.class)
+@ContextConfiguration(classes=WebConfig.class)
 @WebAppConfiguration
 public class ArticleControllerTest {
 	
