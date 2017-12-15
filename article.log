@@ -3,3 +3,265 @@
 [INFO] 2017-12-15 09:29:33,435 org.springframework.web.context.support.GenericWebApplicationContext prepareRefresh - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@e7edb54: startup date [Fri Dec 15 09:29:33 CET 2017]; root of context hierarchy
 [INFO] 2017-12-15 09:29:33,636 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor <init> - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
 [INFO] 2017-12-15 09:29:33,878 org.springframework.web.context.support.GenericWebApplicationContext doClose - Closing org.springframework.web.context.support.GenericWebApplicationContext@e7edb54: startup date [Fri Dec 15 09:29:33 CET 2017]; root of context hierarchy
+[INFO] 2017-12-15 10:05:00,287 org.springframework.test.context.web.WebTestContextBootstrapper getDefaultTestExecutionListenerClassNames - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] 2017-12-15 10:05:00,321 org.springframework.test.context.web.WebTestContextBootstrapper getTestExecutionListeners - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b9627bc, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@65e2dbf3, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4f970963, org.springframework.test.context.support.DirtiesContextTestExecutionListener@61f8bee4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7b49cea0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@887af79]
+[INFO] 2017-12-15 10:05:00,512 org.springframework.web.context.support.GenericWebApplicationContext prepareRefresh - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@17579e0f: startup date [Fri Dec 15 10:05:00 CET 2017]; root of context hierarchy
+[INFO] 2017-12-15 10:05:01,268 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor <init> - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] 2017-12-15 10:05:01,551 org.springframework.jdbc.datasource.DriverManagerDataSource setDriverClassName - Loaded JDBC driver: org.postgresql.Driver
+[INFO] 2017-12-15 10:05:01,681 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO] 2017-12-15 10:05:01,969 org.hibernate.annotations.common.Version <clinit> - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+[INFO] 2017-12-15 10:05:01,978 org.hibernate.Version logVersion - HHH000412: Hibernate Core {4.2.6.Final}
+[INFO] 2017-12-15 10:05:01,981 org.hibernate.cfg.Environment <clinit> - HHH000206: hibernate.properties not found
+[INFO] 2017-12-15 10:05:01,983 org.hibernate.cfg.Environment buildBytecodeProvider - HHH000021: Bytecode provider name : javassist
+[INFO] 2017-12-15 10:05:02,054 org.hibernate.ejb.Ejb3Configuration configure - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO] 2017-12-15 10:05:02,243 org.hibernate.service.jdbc.connections.internal.ConnectionProviderInitiator instantiateExplicitConnectionProvider - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+[INFO] 2017-12-15 10:05:02,615 org.hibernate.dialect.Dialect <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO] 2017-12-15 10:05:02,630 org.hibernate.engine.jdbc.internal.LobCreatorBuilder useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+[INFO] 2017-12-15 10:05:02,890 org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+[INFO] 2017-12-15 10:05:02,895 org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init> - HHH000397: Using ASTQueryTranslatorFactory
+[INFO] 2017-12-15 10:05:03,242 org.hibernate.tool.hbm2ddl.SchemaExport execute - HHH000227: Running hbm2ddl schema export
+[INFO] 2017-12-15 10:05:03,426 org.hibernate.tool.hbm2ddl.SchemaExport execute - HHH000230: Schema export complete
+[INFO] 2017-12-15 10:05:04,256 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping register - Mapped "{[/articles],methods=[GET]}" onto public org.tux.entites.Article org.tux.controller.ArticleController.saveArticle()
+[WARN] 2017-12-15 10:05:04,259 org.springframework.web.context.support.GenericWebApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'articleController' method 
+public java.util.List<org.tux.entites.Article> org.tux.controller.ArticleController.getAllArticle()
+to {[/articles],methods=[GET]}: There is already 'articleController' bean method
+public org.tux.entites.Article org.tux.controller.ArticleController.saveArticle() mapped.
+[INFO] 2017-12-15 10:05:04,262 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+[ERROR] 2017-12-15 10:05:04,266 org.springframework.test.context.TestContextManager prepareTestInstance - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@2b9627bc] to prepare test instance [org.tux.controller.ArticleControllerTest@70e02081]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:183)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:123)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:249)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:193)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'articleController' method 
+public java.util.List<org.tux.entites.Article> org.tux.controller.ArticleController.getAllArticle()
+to {[/articles],methods=[GET]}: There is already 'articleController' bean method
+public org.tux.entites.Article org.tux.controller.ArticleController.saveArticle() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1578)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:133)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 31 more
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'articleController' method 
+public java.util.List<org.tux.entites.Article> org.tux.controller.ArticleController.getAllArticle()
+to {[/articles],methods=[GET]}: There is already 'articleController' bean method
+public org.tux.entites.Article org.tux.controller.ArticleController.saveArticle() mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.assertUniqueMethodMapping(AbstractHandlerMethodMapping.java:567)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:531)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:255)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:241)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:213)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:183)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:125)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1637)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574)
+	... 46 more
+[INFO] 2017-12-15 10:07:32,933 org.springframework.test.context.web.WebTestContextBootstrapper getDefaultTestExecutionListenerClassNames - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] 2017-12-15 10:07:32,952 org.springframework.test.context.web.WebTestContextBootstrapper getTestExecutionListeners - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7b49cea0, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@887af79, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7fac631b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5b87ed94, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6e0e048a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5bc79255]
+[INFO] 2017-12-15 10:07:33,105 org.springframework.web.context.support.GenericWebApplicationContext prepareRefresh - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@33f88ab: startup date [Fri Dec 15 10:07:33 CET 2017]; root of context hierarchy
+[INFO] 2017-12-15 10:07:33,171 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor <init> - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] 2017-12-15 10:07:33,280 org.springframework.web.context.support.GenericWebApplicationContext doClose - Closing org.springframework.web.context.support.GenericWebApplicationContext@33f88ab: startup date [Fri Dec 15 10:07:33 CET 2017]; root of context hierarchy
+[INFO] 2017-12-15 10:09:02,481 org.springframework.test.context.web.WebTestContextBootstrapper buildMergedContextConfiguration - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.tux.controller.ArticleControllerTest]
+[INFO] 2017-12-15 10:09:02,492 org.springframework.test.context.web.WebTestContextBootstrapper getDefaultTestExecutionListenerClassNames - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] 2017-12-15 10:09:02,513 org.springframework.test.context.web.WebTestContextBootstrapper getTestExecutionListeners - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5f341870, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@553f17c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4f7d0008, org.springframework.test.context.support.DirtiesContextTestExecutionListener@271053e1, org.springframework.test.context.transaction.TransactionalTestExecutionListener@589838eb, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@42dafa95]
+[ERROR] 2017-12-15 10:09:02,525 org.springframework.test.context.TestContextManager prepareTestInstance - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@5f341870] to prepare test instance [org.tux.controller.ArticleControllerTest@4bec1f0c]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:183)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:123)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:249)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:193)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: java.lang.IllegalArgumentException: Cannot load an ApplicationContext with a NULL 'contextLoader'. Consider annotating your test class with @ContextConfiguration or @ContextHierarchy.
+	at org.springframework.util.Assert.notNull(Assert.java:115)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:91)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 31 more
+[INFO] 2017-12-15 10:14:09,892 org.springframework.test.context.web.WebTestContextBootstrapper getDefaultTestExecutionListenerClassNames - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] 2017-12-15 10:14:09,917 org.springframework.test.context.web.WebTestContextBootstrapper getTestExecutionListeners - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7494e528, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4bbfb90a, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7c29daf3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9660f4e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5a8806ef, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6c49835d]
+[INFO] 2017-12-15 10:14:10,062 org.springframework.web.context.support.GenericWebApplicationContext prepareRefresh - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2a556333: startup date [Fri Dec 15 10:14:10 CET 2017]; root of context hierarchy
+[INFO] 2017-12-15 10:14:10,129 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor <init> - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] 2017-12-15 10:14:10,206 org.springframework.web.context.support.GenericWebApplicationContext doClose - Closing org.springframework.web.context.support.GenericWebApplicationContext@2a556333: startup date [Fri Dec 15 10:14:10 CET 2017]; root of context hierarchy
+[INFO] 2017-12-15 10:17:49,408 org.springframework.test.context.web.WebTestContextBootstrapper getDefaultTestExecutionListenerClassNames - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] 2017-12-15 10:17:49,435 org.springframework.test.context.web.WebTestContextBootstrapper getTestExecutionListeners - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7b69c6ba, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@46daef40, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@12f41634, org.springframework.test.context.support.DirtiesContextTestExecutionListener@13c27452, org.springframework.test.context.transaction.TransactionalTestExecutionListener@262b2c86, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@371a67ec]
+[INFO] 2017-12-15 10:17:49,592 org.springframework.web.context.support.GenericWebApplicationContext prepareRefresh - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@10dba097: startup date [Fri Dec 15 10:17:49 CET 2017]; root of context hierarchy
+[INFO] 2017-12-15 10:17:49,918 org.springframework.beans.factory.support.DefaultListableBeanFactory registerBeanDefinition - Overriding bean definition for bean 'dataSource' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=rootConfigTest; factoryMethodName=dataSource; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/tux/controller/RootConfigTest.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=rootConfig; factoryMethodName=dataSource; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/tux/config/RootConfig.class]]
+[INFO] 2017-12-15 10:17:49,919 org.springframework.beans.factory.support.DefaultListableBeanFactory registerBeanDefinition - Overriding bean definition for bean 'jpaVendorAdapter' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=rootConfigTest; factoryMethodName=jpaVendorAdapter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/tux/controller/RootConfigTest.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=rootConfig; factoryMethodName=jpaVendorAdapter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/tux/config/RootConfig.class]]
+[INFO] 2017-12-15 10:17:49,920 org.springframework.beans.factory.support.DefaultListableBeanFactory registerBeanDefinition - Overriding bean definition for bean 'transactionManager' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=rootConfigTest; factoryMethodName=transactionManager; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/tux/controller/RootConfigTest.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=rootConfig; factoryMethodName=transactionManager; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/tux/config/RootConfig.class]]
+[INFO] 2017-12-15 10:17:49,920 org.springframework.beans.factory.support.DefaultListableBeanFactory registerBeanDefinition - Overriding bean definition for bean 'entityManagerFactory' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=rootConfigTest; factoryMethodName=entityManagerFactory; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/tux/controller/RootConfigTest.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=rootConfig; factoryMethodName=entityManagerFactory; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/tux/config/RootConfig.class]]
+[INFO] 2017-12-15 10:17:50,004 org.springframework.beans.factory.support.DefaultListableBeanFactory registerBeanDefinition - Overriding bean definition for bean 'resolver' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=webConfig; factoryMethodName=resolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/tux/config/WebConfig.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=webConfigTest; factoryMethodName=resolver; initMethodName=null; destroyMethodName=(inferred); defined in org.tux.controller.WebConfigTest]
+[INFO] 2017-12-15 10:17:50,204 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor <init> - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] 2017-12-15 10:17:50,386 org.springframework.jdbc.datasource.DriverManagerDataSource setDriverClassName - Loaded JDBC driver: org.postgresql.Driver
+[INFO] 2017-12-15 10:17:50,496 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO] 2017-12-15 10:17:50,661 org.hibernate.annotations.common.Version <clinit> - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+[INFO] 2017-12-15 10:17:50,667 org.hibernate.Version logVersion - HHH000412: Hibernate Core {4.2.6.Final}
+[INFO] 2017-12-15 10:17:50,669 org.hibernate.cfg.Environment <clinit> - HHH000206: hibernate.properties not found
+[INFO] 2017-12-15 10:17:50,671 org.hibernate.cfg.Environment buildBytecodeProvider - HHH000021: Bytecode provider name : javassist
+[INFO] 2017-12-15 10:17:50,704 org.hibernate.ejb.Ejb3Configuration configure - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[INFO] 2017-12-15 10:17:50,797 org.hibernate.service.jdbc.connections.internal.ConnectionProviderInitiator instantiateExplicitConnectionProvider - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+[INFO] 2017-12-15 10:17:51,085 org.hibernate.dialect.Dialect <init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[INFO] 2017-12-15 10:17:51,099 org.hibernate.engine.jdbc.internal.LobCreatorBuilder useContextualLobCreation - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+[INFO] 2017-12-15 10:17:51,216 org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+[INFO] 2017-12-15 10:17:51,223 org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init> - HHH000397: Using ASTQueryTranslatorFactory
+[INFO] 2017-12-15 10:17:51,545 org.hibernate.tool.hbm2ddl.SchemaExport execute - HHH000227: Running hbm2ddl schema export
+[INFO] 2017-12-15 10:17:51,732 org.hibernate.tool.hbm2ddl.SchemaExport execute - HHH000230: Schema export complete
+[INFO] 2017-12-15 10:17:52,453 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping register - Mapped "{[/articles],methods=[GET]}" onto public java.util.List<org.tux.entites.Article> org.tux.controller.ArticleController.getAllArticle()
+[WARN] 2017-12-15 10:17:52,455 org.springframework.web.context.support.GenericWebApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/web/servlet/config/annotation/DelegatingWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'articleController' method 
+public org.tux.entites.Article org.tux.controller.ArticleController.saveArticle()
+to {[/articles],methods=[GET]}: There is already 'articleController' bean method
+public java.util.List<org.tux.entites.Article> org.tux.controller.ArticleController.getAllArticle() mapped.
+[INFO] 2017-12-15 10:17:52,457 org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+[ERROR] 2017-12-15 10:17:52,461 org.springframework.test.context.TestContextManager prepareTestInstance - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@7b69c6ba] to prepare test instance [org.tux.controller.ArticleControllerTest@203c20cf]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:183)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:123)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:249)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:193)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/web/servlet/config/annotation/DelegatingWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'articleController' method 
+public org.tux.entites.Article org.tux.controller.ArticleController.saveArticle()
+to {[/articles],methods=[GET]}: There is already 'articleController' bean method
+public java.util.List<org.tux.entites.Article> org.tux.controller.ArticleController.getAllArticle() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1578)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:133)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 31 more
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'articleController' method 
+public org.tux.entites.Article org.tux.controller.ArticleController.saveArticle()
+to {[/articles],methods=[GET]}: There is already 'articleController' bean method
+public java.util.List<org.tux.entites.Article> org.tux.controller.ArticleController.getAllArticle() mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.assertUniqueMethodMapping(AbstractHandlerMethodMapping.java:567)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:531)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:255)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:241)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:213)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:183)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:125)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1637)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574)
+	... 46 more
+[INFO] 2017-12-15 10:18:40,518 org.springframework.test.context.web.WebTestContextBootstrapper getDefaultTestExecutionListenerClassNames - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] 2017-12-15 10:18:40,538 org.springframework.test.context.web.WebTestContextBootstrapper getTestExecutionListeners - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7b69c6ba, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@46daef40, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@12f41634, org.springframework.test.context.support.DirtiesContextTestExecutionListener@13c27452, org.springframework.test.context.transaction.TransactionalTestExecutionListener@262b2c86, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@371a67ec]
+[INFO] 2017-12-15 10:18:40,681 org.springframework.web.context.support.GenericWebApplicationContext prepareRefresh - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@10dba097: startup date [Fri Dec 15 10:18:40 CET 2017]; root of context hierarchy
+[INFO] 2017-12-15 10:18:40,724 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor <init> - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] 2017-12-15 10:18:40,808 org.springframework.web.context.support.GenericWebApplicationContext doClose - Closing org.springframework.web.context.support.GenericWebApplicationContext@10dba097: startup date [Fri Dec 15 10:18:40 CET 2017]; root of context hierarchy
+[INFO] 2017-12-15 10:25:03,068 org.springframework.test.context.web.WebTestContextBootstrapper getDefaultTestExecutionListenerClassNames - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] 2017-12-15 10:25:03,086 org.springframework.test.context.web.WebTestContextBootstrapper getTestExecutionListeners - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7b69c6ba, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@46daef40, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@12f41634, org.springframework.test.context.support.DirtiesContextTestExecutionListener@13c27452, org.springframework.test.context.transaction.TransactionalTestExecutionListener@262b2c86, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@371a67ec]
+[INFO] 2017-12-15 10:25:03,233 org.springframework.web.context.support.GenericWebApplicationContext prepareRefresh - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@10dba097: startup date [Fri Dec 15 10:25:03 CET 2017]; root of context hierarchy
+[INFO] 2017-12-15 10:25:03,275 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor <init> - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] 2017-12-15 10:25:03,352 org.springframework.web.context.support.GenericWebApplicationContext doClose - Closing org.springframework.web.context.support.GenericWebApplicationContext@10dba097: startup date [Fri Dec 15 10:25:03 CET 2017]; root of context hierarchy
+[INFO] 2017-12-15 10:26:44,238 org.springframework.test.context.web.WebTestContextBootstrapper getDefaultTestExecutionListenerClassNames - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] 2017-12-15 10:26:44,264 org.springframework.test.context.web.WebTestContextBootstrapper getTestExecutionListeners - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7b69c6ba, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@46daef40, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@12f41634, org.springframework.test.context.support.DirtiesContextTestExecutionListener@13c27452, org.springframework.test.context.transaction.TransactionalTestExecutionListener@262b2c86, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@371a67ec]
+[INFO] 2017-12-15 10:26:44,420 org.springframework.web.context.support.GenericWebApplicationContext prepareRefresh - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@10dba097: startup date [Fri Dec 15 10:26:44 CET 2017]; root of context hierarchy
+[INFO] 2017-12-15 10:26:44,464 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor <init> - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] 2017-12-15 10:26:44,539 org.springframework.web.context.support.GenericWebApplicationContext doClose - Closing org.springframework.web.context.support.GenericWebApplicationContext@10dba097: startup date [Fri Dec 15 10:26:44 CET 2017]; root of context hierarchy

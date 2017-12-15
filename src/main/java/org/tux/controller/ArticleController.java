@@ -28,7 +28,7 @@ public class ArticleController {
 
 
 
-	@RequestMapping(value = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/save", method = RequestMethod.GET)
 	public Article  saveArticle(){
 		
 		logger.info("sav eArticle");
