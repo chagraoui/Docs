@@ -27,11 +27,12 @@ public class ArticleController {
 	ArticleRepository articleRepository;
 
 
+	
 
 	@RequestMapping(value = "/save", method = RequestMethod.GET)
 	public Article  saveArticle(){
 		
-		logger.info("sav eArticle");
+		logger.info("save Article");
 		Date date= new Date();
 		Article article=new Article(1,"10", date, "/Tmp");
 		articleRepository.save(article);

@@ -2,6 +2,9 @@ package org.tux.config;
 
 import java.util.Properties;
 
+import org.apache.log4j.Logger;
+import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -23,7 +26,8 @@ public class RootConfig {
 
 	static final String FALSE = "false";
 
-
+	private Logger logger = Logger.getLogger(batchConfiguration.class);
+	
 @Bean(name="dataSource")
 public DriverManagerDataSource dataSource(){
 	DriverManagerDataSource dataSource= new DriverManagerDataSource();
@@ -68,5 +72,20 @@ Properties hibernateProperties(){
 	return properties;
 }
 
+
+/* Job luncher*/
+@Bean(name="jobRepository")
+public JobRepository jobRepository(){
+	
+	logger.info("************************** Init jobRepository");
+	JobRepository jobRepository = null;
+	try {
+		jobRepository = (new MapJobRepositoryFactoryBean(transactionManager())).getObject();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	
+	return jobRepository;
+}
 
 }

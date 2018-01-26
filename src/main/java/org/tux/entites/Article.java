@@ -52,6 +52,12 @@ public class Article {
 	public Article() {
 		super();
 	}
+	public Article(String title, Date date, String path) {
+		super();
+		this.title = title;
+		this.date = date;
+		this.path = path;
+	}
 	
 	
 	
