@@ -17,7 +17,7 @@ public class PersonItemProcessor implements ItemProcessor<Personne, Personne>{
 		final String firstName = personne.getPrenom();
 		final String lastName =personne.getNom().toUpperCase();
 		
-		log.info("processing converting ("+ personne.getNom() +" ) into (" + lastName + ")");
+		log.info("processing converting ("+ personne.getNom() +" ) TO (" + lastName + ")");
 		
 		final Personne transformerPerson = new Personne(firstName,lastName);
 

@@ -1,6 +1,7 @@
 package org.tux.entites;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,6 +10,10 @@ import javax.persistence.Table;
 public class Personne {
 	
 	@Id
+	@GeneratedValue
+	private Long id;
+	
+	
 	private String prenom ;
 	private String nom ;
 
@@ -33,6 +38,18 @@ public class Personne {
 	public Personne() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public Personne(Long id, String prenom, String nom) {
+		super();
+		this.id = id;
+		this.prenom = prenom;
+		this.nom = nom;
 	}
 
 

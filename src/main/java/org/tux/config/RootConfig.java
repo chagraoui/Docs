@@ -77,7 +77,6 @@ Properties hibernateProperties(){
 @Bean(name="jobRepository")
 public JobRepository jobRepository(){
 	
-	logger.info("************************** Init jobRepository");
 	JobRepository jobRepository = null;
 	try {
 		jobRepository = (new MapJobRepositoryFactoryBean(transactionManager())).getObject();
