@@ -23,6 +23,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.task.SimpleAsyncTaskExecutor;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.tux.dao.PersonneRepository;
 import org.tux.entites.Personne;
 
 @Configuration
@@ -38,7 +39,6 @@ public class batchConfiguration {
     @Autowired
     public StepBuilderFactory stepBuilderFactory;
 
-
     @Autowired
     public DataSource dataSource;
     
@@ -48,8 +48,9 @@ public class batchConfiguration {
     @Autowired
     public JobRepository jobRepository;
     
+    @Autowired
+    public PersonneRepository personneRepository;
     
-   
 	@Bean(name="taskExecutor")
 	public SimpleAsyncTaskExecutor simpleAsyncTaskExecutor(){
 		SimpleAsyncTaskExecutor sate = new SimpleAsyncTaskExecutor();
@@ -71,7 +72,7 @@ public class batchConfiguration {
         reader.setResource(new ClassPathResource("listePersonne.csv"));
         reader.setLineMapper(new DefaultLineMapper<Personne>() {{
             setLineTokenizer(new DelimitedLineTokenizer() {{
-                setNames(new String[] { "prenom", "nom" });
+                setNames(new String[] {"prenom","nom" });
             }});
             setFieldSetMapper(new BeanWrapperFieldSetMapper<Personne>() {{
                 setTargetType(Personne.class);
@@ -89,7 +90,7 @@ public class batchConfiguration {
     public JdbcBatchItemWriter<Personne> writer() {
         JdbcBatchItemWriter<Personne> writer = new JdbcBatchItemWriter<Personne>();
         writer.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<Personne>());
-        writer.setSql("INSERT INTO personne (prenom, nom) VALUES (:prenom, :nom)");
+        writer.setSql("INSERT INTO personne (prenom, nom) VALUES (:prenom,:nom)");
         writer.setDataSource(dataSource);
         return writer;
     }
@@ -98,7 +99,6 @@ public class batchConfiguration {
  // tag::jobstep[]
     @Bean
     public Step step1() {
-    	logger.info("************************** Init STEP ");
         return stepBuilderFactory.get("step1")
                 .<Personne, Personne> chunk(1)
                 .reader(reader())
@@ -108,10 +108,8 @@ public class batchConfiguration {
     }
     // end::jobstep[]
     
-
     @Bean
     public Job importUserJob(JobCompletionNotificationListener listener) {
-    	logger.info("************************** Init importUserJob ");
         return jobBuilderFactory.get("importUserJob")
                 .incrementer(new RunIdIncrementer())
                 .listener(listener)

@@ -19,13 +19,14 @@ public class ArticleControllerTest {
 //	@Autowired	
 //	ArticleRepository articleRepository;
 	
-	@Test
-	public void  saveArticle(){
-		Date date= new Date();
-		Article article=new Article(1,"10", date, "Tmp");
-//		articleRepository.save(article);
-		assertEquals("insertion OK", article.getIdArticle(),1);
+//	@Test
+	
+//	public void  saveArticle(){
+//		Date date= new Date();
+//		Article article=new Article(1,"10", date, "Tmp");
+////		articleRepository.save(article);
+//		assertEquals("insertion OK", article.getIdArticle(),1);
 		
-	}
+//	}
 
 }
