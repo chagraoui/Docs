@@ -1,5 +1,7 @@
 package org.tux.config;
 
+import java.util.Random;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
@@ -18,9 +20,9 @@ public class PersonItemProcessor implements ItemProcessor<Personne, Personne>{
 		final String lastName =personne.getNom().toUpperCase();
 		
 		log.info("processing converting ("+ personne.getNom() +" ) TO (" + lastName + ")");
-		
-		final Personne transformerPerson = new Personne(firstName,lastName);
 
+		final Personne transformerPerson = new Personne(personne.getId(),firstName,lastName);
+		
 		return transformerPerson;
 	}
 

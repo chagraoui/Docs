@@ -72,7 +72,7 @@ public class batchConfiguration {
         reader.setResource(new ClassPathResource("listePersonne.csv"));
         reader.setLineMapper(new DefaultLineMapper<Personne>() {{
             setLineTokenizer(new DelimitedLineTokenizer() {{
-                setNames(new String[] {"prenom","nom" });
+                setNames(new String[] {"id","prenom","nom" });
             }});
             setFieldSetMapper(new BeanWrapperFieldSetMapper<Personne>() {{
                 setTargetType(Personne.class);
@@ -90,7 +90,7 @@ public class batchConfiguration {
     public JdbcBatchItemWriter<Personne> writer() {
         JdbcBatchItemWriter<Personne> writer = new JdbcBatchItemWriter<Personne>();
         writer.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<Personne>());
-        writer.setSql("INSERT INTO personne (prenom, nom) VALUES (:prenom,:nom)");
+        writer.setSql("INSERT INTO personne (id,prenom, nom) VALUES (:id,:prenom,:nom)");
         writer.setDataSource(dataSource);
         return writer;
     }

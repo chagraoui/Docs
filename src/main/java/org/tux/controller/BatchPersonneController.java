@@ -53,8 +53,6 @@ public class BatchPersonneController {
 			e.printStackTrace();
 			logger.error("finish the importUserJob " + e);
 		}
-
-		logger.info("finish the importUserJob");
 	}
 
 }
