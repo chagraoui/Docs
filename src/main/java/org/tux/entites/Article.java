@@ -3,6 +3,8 @@ package org.tux.entites;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,6 +12,7 @@ import javax.persistence.Table;
 @Table(name = "article")
 public class Article {
 
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
 	private Integer idArticle;
 	private String title ;
@@ -58,6 +61,15 @@ public class Article {
 		this.date = date;
 		this.path = path;
 	}
+	@Override
+	public String toString() {
+		return "Article ["
+				+ (idArticle != null ? "idArticle=" + idArticle + ", " : "")
+				+ (title != null ? "title=" + title + ", " : "")
+				+ (date != null ? "date=" + date + ", " : "")
+				+ (path != null ? "path=" + path : "") + "]";
+	}
+	
 	
 	
 	

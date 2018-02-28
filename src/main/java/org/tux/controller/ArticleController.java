@@ -1,11 +1,13 @@
 package org.tux.controller;
 
 
-import java.util.Date;
 import java.util.List;
+
+import javax.transaction.Transactional;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +16,7 @@ import org.tux.entites.Article;
 
 @RestController
 @RequestMapping(value="/articles")
+@Transactional
 public class ArticleController {
 
 	/**
@@ -27,24 +30,19 @@ public class ArticleController {
 	ArticleRepository articleRepository;
 
 
-	
-
-	@RequestMapping(value = "/save", method = RequestMethod.GET)
-	public Article  saveArticle(){
-		
-		logger.info("save Article");
-		Date date= new Date();
-		Article article=new Article(1,"10", date, "/Tmp");
-		articleRepository.save(article);
-		return article;
-	}
-	
-	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public List<Article>  getAllArticle(){
 		
-		logger.info("getALLArticle");
-		return articleRepository.findAll();
+		logger.info("get ALL Articles");
+		return (List<Article>) articleRepository.findAll();
 	}
-	
+
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	public Article  saveArticle(@RequestBody  Article article){
+		
+		logger.info("save Article");
+		articleRepository.save(article);
+		return article;
+	}
+
 }

@@ -22,7 +22,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.task.SimpleAsyncTaskExecutor;
-import org.springframework.transaction.PlatformTransactionManager;
 import org.tux.dao.PersonneRepository;
 import org.tux.entites.Personne;
 
@@ -41,9 +40,6 @@ public class batchConfiguration {
 
     @Autowired
     public DataSource dataSource;
-    
-    @Autowired
-    public PlatformTransactionManager transactionManager;
     
     @Autowired
     public JobRepository jobRepository;

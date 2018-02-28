@@ -2,9 +2,12 @@ package org.tux.config;
 
 import java.util.Properties;
 
+import javax.inject.Singleton;
+
 import org.apache.log4j.Logger;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -26,7 +29,7 @@ public class RootConfig {
 
 	static final String FALSE = "false";
 
-	private Logger logger = Logger.getLogger(batchConfiguration.class);
+	private Logger logger = Logger.getLogger(RootConfig.class);
 	
 @Bean(name="dataSource")
 public DriverManagerDataSource dataSource(){
@@ -37,7 +40,6 @@ public DriverManagerDataSource dataSource(){
 	dataSource.setPassword("admin");	
 	return dataSource;
 }
-
 
 @Bean
 public JpaVendorAdapter jpaVendorAdapter(){
@@ -51,8 +53,11 @@ public PlatformTransactionManager transactionManager(){
 	return transactionManager;
 }
 
-@Bean(name="entityManagerFactory")            
+@Bean(name="entityManagerFactory") 
+@Singleton
 public LocalContainerEntityManagerFactoryBean entityManagerFactory(){
+	
+	logger.info("****************************************************************");
 	LocalContainerEntityManagerFactoryBean entityMangerFactoryBean = new LocalContainerEntityManagerFactoryBean();
 	entityMangerFactoryBean.setDataSource(dataSource());
 	entityMangerFactoryBean.setPackagesToScan(new String[] {"org.tux.entites"});
@@ -65,9 +70,9 @@ public LocalContainerEntityManagerFactoryBean entityManagerFactory(){
 Properties hibernateProperties(){
 	Properties properties = new Properties();
 	properties.setProperty("hibernate.hbm2ddl.auto", "create");
-	properties.setProperty("hibernate.show_sql", FALSE);
-	properties.setProperty("hibernate.format_sql",FALSE);
-	properties.setProperty("hibernate.use_sql_comments",FALSE);
+	properties.setProperty("hibernate.show_sql", "true");
+	properties.setProperty("hibernate.format_sql","true");
+	properties.setProperty("hibernate.use_sql_comments","true");
 	properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
 	return properties;
 }
