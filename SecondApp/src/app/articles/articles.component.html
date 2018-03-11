@@ -1,3 +1,13 @@
-<p>
-  articles works!
-</p>
+<table class="table table-striped">
+         <tr>
+           <th>Titre</th><th>Creation Date</th><th>Path</th>
+         </tr>
+
+           <tr *ngFor="let c of articles" >
+           <td>{{c.title}}</td>
+           <td>{{c.date}}</td>
+           <td>{{c.path}}</td>
+
+
+         </tr>
+       </table>
