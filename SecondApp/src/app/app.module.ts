@@ -14,6 +14,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { GaleryService } from './galery.service';
 import { ArticlesComponent } from './articles/articles.component';
+import { ArticlesService } from './articles.service';
 
 const routes: Routes = [
   {path:'about',component: AboutComponent },
@@ -35,7 +36,7 @@ const routes: Routes = [
   imports: [
     BrowserModule, FormsModule,RouterModule.forRoot(routes),HttpClientModule
   ],
-  providers: [AboutService, GaleryService],
+  providers: [AboutService, GaleryService, ArticlesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
