@@ -13,11 +13,13 @@ import {RouterModule, Routes} from "@angular/router";
 import { ContactsComponent } from './contacts/contacts.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { GaleryService } from './galery.service';
+import { ArticlesComponent } from './articles/articles.component';
 
 const routes: Routes = [
   {path:'about',component: AboutComponent },
   {path: 'contacts', component: ContactsComponent},
   {path: 'gallery', component: GalleryComponent},
+  {path: 'articles', component: ArticlesComponent},
   {path: '', redirectTo: '/about',pathMatch: 'full'}
 ];
 
@@ -27,7 +29,8 @@ const routes: Routes = [
     AppComponent,
     AboutComponent,
     ContactsComponent,
-    GalleryComponent
+    GalleryComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule, FormsModule,RouterModule.forRoot(routes),HttpClientModule
