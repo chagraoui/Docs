@@ -10,10 +10,12 @@ import {FormsModule} from "@angular/forms";
 import {AboutService} from '../about.service';
 import {RouterModule, Routes} from "@angular/router";
 import { ContactsComponent } from './contacts/contacts.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 const routes: Routes = [
   {path:'about',component: AboutComponent },
   {path: 'contacts', component: ContactsComponent},
+  {path: 'gallery', component: GalleryComponent},
   {path: '', redirectTo: '/about',pathMatch: 'full'}
 ];
 
@@ -22,7 +24,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     AboutComponent,
-    ContactsComponent
+    ContactsComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule, FormsModule,RouterModule.forRoot(routes)
