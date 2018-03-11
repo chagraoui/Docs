@@ -5,10 +5,16 @@
 
 
 <div>
-  <form #f="ngForm" (ngSubmit)="onSerch(f.value)">
+
+  <!-- <div class="form-group">
+      <label>Cle de recherche</label>
+      <input type="text" [(ngModel)]="motCle"/>
+      <button class="btn btn-primary" (click)="onSearch()" >Chercher</button>
+    </div> -->
+  <form #f="ngForm" (ngSubmit)="onSearch(f.value)">
 
     <label>mot clé:</label>
-    <input type="text" name="motCle" ngModel required>
+    <input type="text" [(ngModel)]="motCle" name="cle" required>
     <button type="submit">chercher</button>
   </form>
 
