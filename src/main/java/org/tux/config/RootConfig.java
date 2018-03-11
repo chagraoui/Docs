@@ -5,9 +5,6 @@ import java.util.Properties;
 import javax.inject.Singleton;
 
 import org.apache.log4j.Logger;
-import org.springframework.batch.core.repository.JobRepository;
-import org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -79,17 +76,17 @@ Properties hibernateProperties(){
 
 
 /* Job luncher*/
-@Bean(name="jobRepository")
-public JobRepository jobRepository(){
-	
-	JobRepository jobRepository = null;
-	try {
-		jobRepository = (new MapJobRepositoryFactoryBean(transactionManager())).getObject();
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
-	
-	return jobRepository;
-}
+//@Bean(name="jobRepository")
+//public JobRepository jobRepository(){
+//	
+//	JobRepository jobRepository = null;
+//	try {
+//		jobRepository = (new MapJobRepositoryFactoryBean(transactionManager())).getObject();
+//	} catch (Exception e) {
+//		e.printStackTrace();
+//	}
+//	
+//	return jobRepository;
+//}
 
 }
