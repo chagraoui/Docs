@@ -9,15 +9,42 @@ import {ArticlesService} from "../articles.service";
 export class ArticlesComponent implements OnInit {
 
   articles:any ;
-  constructor(private articlesService : ArticlesService) { }
 
-  ngOnInit() {
+  article={
+    idArticle:0,
+    title:"",
+    path:"",
+    date:1565353535
+
+  };
+  constructor(private articlesService : ArticlesService) {
     this.articlesService.getArticles().subscribe(
       data=> {
         this.articles=data;
-      }
-    )
+      })
   }
+
+  ngOnInit() {
+    this.articlesService.getArticles()
+    .subscribe(
+      data=> {
+        this.articles=data;
+      })
+
+  }
+
+
+  onAddArticle(data){
+    this.articlesService.saveArticle(data.title);
+    this.article.title="";
+    this.articlesService.getArticles().subscribe(
+      data=> {
+        this.articles=data;
+      })
+  }
+
+
+
 
 
 }

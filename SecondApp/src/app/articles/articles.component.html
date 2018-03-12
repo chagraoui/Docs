@@ -11,3 +11,14 @@
 
          </tr>
        </table>
+
+<p></p>
+
+
+<div>
+<form #f="ngForm" (ngSubmit)="onAddArticle(f.value)">
+  <label >Message: </label>
+  <input required name="title" ngModel type="text" [(ngModel)]="article.title">
+  <button [disabled]=!f.valid type="submit"> Ajouter Article</button>
+</form>
+</div>
