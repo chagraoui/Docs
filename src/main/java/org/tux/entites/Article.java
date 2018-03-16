@@ -70,10 +70,5 @@ public class Article {
 				+ (path != null ? "path=" + path : "") + "]";
 	}
 	
-	
-	
-	
-	
-	
-	
+
 }

@@ -15,13 +15,10 @@ export class ArticlesComponent implements OnInit {
     title:"",
     path:"",
     date:1565353535
-
   };
+
   constructor(private articlesService : ArticlesService) {
-    this.articlesService.getArticles().subscribe(
-      data=> {
-        this.articles=data;
-      })
+
   }
 
   ngOnInit() {
@@ -34,17 +31,18 @@ export class ArticlesComponent implements OnInit {
   }
 
 
+
   onAddArticle(data){
-    this.articlesService.saveArticle(data.title);
-    this.article.title="";
-    this.articlesService.getArticles().subscribe(
-      data=> {
-        this.articles=data;
-      })
-  }
 
+    this.articlesService.saveArticle(data.title)
+      .subscribe(res => {
 
+        this.articlesService.getArticles()
+          .subscribe(data=> {
+              this.articles=data;
+            })
 
+  })
 
-
+    this.article.title=""
 }

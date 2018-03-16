@@ -14,7 +14,7 @@ export class ArticlesService {
 
 
 
-
+  articles:any ;
   constructor(private http : HttpClient) {
   }
 
@@ -32,19 +32,24 @@ this.article.idArticle=null;
 this.article.path="/tmp"
 this.article.title=title;
 
-this.http.post("http://localhost:7080/documentation/articles/save",this.article)
-  .subscribe(res => {
-      console.log(res);
-    },
-    err => {
-      console.log("Error occured");
-    }
-  );
+return this.http.post("http://localhost:7080/documentation/articles/save",this.article)
   }
 
 
   getOneArticle(){
     return this.article;
+  }
+
+
+
+  getALLArticles(){
+  return this.articles;
+  }
+
+
+
+  postdata(){
+  return  this.http.post("http://localhost:7080/documentation/articles/save",this.article)
   }
 
 
