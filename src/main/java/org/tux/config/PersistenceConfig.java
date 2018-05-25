@@ -22,11 +22,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //@PropertySource("file://${catalina.base}/conf/smgs/persistence.properties")
 @EnableJpaRepositories("org.tux.dao")
 @EnableTransactionManagement
-public class RootConfig {
+public class PersistenceConfig {
 
 	static final String FALSE = "false";
 
-	private Logger logger = Logger.getLogger(RootConfig.class);
+	private Logger logger = Logger.getLogger(PersistenceConfig.class);
 	
 @Bean(name="dataSource")
 public DriverManagerDataSource dataSource(){
