@@ -10,9 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.tux.dao.UserRepository;
 import org.tux.entites.User;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 
 @CrossOrigin("*")
 @RestController
+@Api(value = "user controller", description = "Operations for users management")
 @RequestMapping(value="/users")
 public class UserContoller {
 
@@ -24,6 +28,7 @@ public class UserContoller {
 
 
 	@RequestMapping(value = "/singIN", method = RequestMethod.POST)
+    @ApiOperation(value = "get all articles", notes = "get articles list")
 	public User  saveArticle(@RequestBody  User user){
 
 		User u =new User("demo@demo.com","demo");

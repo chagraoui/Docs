@@ -18,6 +18,7 @@
 		<failOnMissingWebXml>false</failOnMissingWebXml>
 		<junit.version>4.12</junit.version>
 		<spring.version>4.2.5.RELEASE</spring.version>
+		<springfox-swagger2.version>2.2.2</springfox-swagger2.version>
 
 <java.version>1.8</java.version>
 	</properties>
@@ -141,6 +142,20 @@
 			<artifactId>spring-batch-core</artifactId>
 			<version>4.0.0.RELEASE</version>
 		</dependency>
+		
+		
+					<!-- swagger springmvc -->
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger-ui</artifactId>
+				<version>${springfox-swagger2.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger2</artifactId>
+				<version>${springfox-swagger2.version}</version>
+			</dependency>
 
 	</dependencies>
 </project>

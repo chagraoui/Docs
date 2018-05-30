@@ -15,10 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 import org.tux.dao.ArticleRepository;
 import org.tux.entites.Article;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @CrossOrigin
 @RestController
 @RequestMapping(value="/articles")
 @Transactional
+@Api(value = "article controller", description = "Operations for users management")
 public class ArticleController {
 
 	/**
@@ -31,7 +35,7 @@ public class ArticleController {
 	@Autowired
 	ArticleRepository articleRepository;
 
-
+    @ApiOperation(value = "get all articles", notes = "get articles list")
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public List<Article>  getAllArticle(){
 		
@@ -39,6 +43,7 @@ public class ArticleController {
 		return (List<Article>) articleRepository.findAll();
 	}
 
+    @ApiOperation(value = "save Article", notes = "save Article method")
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public Article  saveArticle(@RequestBody  Article article){
 		
