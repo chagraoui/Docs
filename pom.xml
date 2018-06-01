@@ -19,6 +19,7 @@
 		<junit.version>4.12</junit.version>
 		<spring.version>4.2.5.RELEASE</spring.version>
 		<springfox-swagger2.version>2.2.2</springfox-swagger2.version>
+		<spring-security.version>4.2.4.RELEASE</spring-security.version>
 
 <java.version>1.8</java.version>
 	</properties>
@@ -155,6 +156,26 @@
 				<groupId>io.springfox</groupId>
 				<artifactId>springfox-swagger2</artifactId>
 				<version>${springfox-swagger2.version}</version>
+			</dependency>
+			
+			
+			<!-- spring Security -->
+						<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-web</artifactId>
+				<version>${spring-security.version}</version>
+			</dependency>
+			
+						<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-core</artifactId>
+				<version>${spring-security.version}</version>
+			</dependency>
+             
+             <dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-config</artifactId>
+				<version>${spring-security.version}</version>
 			</dependency>
 
 	</dependencies>

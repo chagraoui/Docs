@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiOperation;
 
 @CrossOrigin
 @RestController
-@RequestMapping(value="/articles")
+@RequestMapping(value="/rest/articles")
 @Transactional
 @Api(value = "article controller", description = "Operations for users management")
 public class ArticleController {
