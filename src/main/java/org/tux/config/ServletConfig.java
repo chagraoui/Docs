@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableWebMvc
 @ComponentScan("org.tux")
 @EnableSwagger2
-public class WebConfig extends WebMvcConfigurerAdapter{
+public class ServletConfig extends WebMvcConfigurerAdapter{
 	
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
