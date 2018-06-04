@@ -18,7 +18,6 @@ import org.tux.entites.Article;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-@CrossOrigin
 @RestController
 @RequestMapping(value="/rest/articles")
 @Transactional

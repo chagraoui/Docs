@@ -2,5 +2,6 @@
 .classpath
 .settings
 target
-article.log
+article.log*
 apache-tomcat-7.0.70/
+#rapportFinale.ods

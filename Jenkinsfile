@@ -18,7 +18,7 @@ agent any
 	}
         stage('Deliver') { 
             steps {
-                sh 'scp target/documentation.war /home/mehdi/dev/apache-tomcat-7.0.70/webapps' 
+                sh 'scp target/documentation.war /home/mehdi/dev/projects/Docs/apache-tomcat-7.0.70/webapps' 
             }        
         }
     }
