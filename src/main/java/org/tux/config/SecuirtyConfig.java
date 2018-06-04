@@ -68,6 +68,8 @@ public class SecuirtyConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
+//		http.authorizeRequests().anyRequest().permitAll();
+
 		String baseWsURL="/rest*/**";
 		http.authorizeRequests().antMatchers(HttpMethod.OPTIONS, "/*/**").permitAll()
 				.antMatchers("/login", "/rest/open/**", "/sdoc.jsp**", "/css/**", "/images/**", "/lib/**",
